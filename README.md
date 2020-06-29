@@ -46,27 +46,6 @@ Output:
 ]
 ```
 
-## Registering as a service
-
-When used as a service, the `BlockConverter` should be configured once and registered as a singleton in the DI container.
-
-Example:
-
-```csharp
-services.AddSingleton<IBlockConverter>(s =>
-{
-	var settings = new BlockConverterSettings
-    {
-	    JsonSerializerSettings = new JsonSerializerSettings 
-		{
-			NullValueHandling = NullValueHandling.Include,
-            Formatting = Formatting.Indented
-        }
-	};
-	
-    return new BlockConverter(settings);
-});
-```
 ## Configuration
 
 The `BlockConverter` can be configured with an optional `BlockConverterSettings` object. The following settings can be customized:
@@ -81,9 +60,31 @@ The `BlockConverter` can be configured with an optional `BlockConverterSettings`
 	- An enum which determines what to do when malformed HTML results in a span element without a parent block (IE: `<body>this is not valid markup</body>`). Default behavior is to create a block for such elements and add them to the root.
 
 
+## Registering as a service
+
+When used as a service, the `BlockConverter` should be configured once and registered as a singleton in the DI container.
+
+Example:
+
+```csharp
+services.AddSingleton<IBlockConverter>(s =>
+{
+    var settings = new BlockConverterSettings
+    {
+        JsonSerializerSettings = new JsonSerializerSettings 
+        {
+            NullValueHandling = NullValueHandling.Include,
+            Formatting = Formatting.Indented
+        }
+    };
+	
+    return new BlockConverter(settings);
+});
+```
 ## Customizing
 
-Existing parsers can be removed with the `BlockConverter.RemoveParser()` method. Custom parsers can be added with `BlockConverter.AddParser()`.   When a parser is added it will be inserted at the top of the evaluation chain and override any existing parsers which handle the same element.
+Existing parsers can be removed with the `BlockConverter.RemoveParser()` method. Custom parsers can be added with `BlockConverter.AddParser()`.  When a parser is added it will be inserted at the top of the evaluation chain and override any existing parsers which handle the same element.
+All custom parsers will be instanciated only once and should be able to function as a singleton.
 
 Example:
 
