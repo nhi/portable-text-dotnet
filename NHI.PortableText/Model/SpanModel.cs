@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace NHI.PortableText.Model
 {
@@ -9,15 +10,19 @@ namespace NHI.PortableText.Model
     public class SpanModel
     {
         [JsonProperty("_type")]
+        [JsonPropertyName("_type")]
         public string Type { get; set; }
 
         [JsonProperty("_key")]
+        [JsonPropertyName("_key")]
         public string Key { get; set; }
 
         [JsonProperty("marks")]
+        [JsonPropertyName("marks")]
         public virtual List<string> Marks { get; set; }
 
         [JsonProperty("text")]
+        [JsonPropertyName("text")]
         public virtual string Text { get; set; }
 
         /// <summary>

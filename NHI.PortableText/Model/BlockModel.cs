@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace NHI.PortableText.Model
 {
@@ -9,24 +10,31 @@ namespace NHI.PortableText.Model
     public class BlockModel
     {
         [JsonProperty("_type")]
+        [JsonPropertyName("_type")]
         public string Type { get; set; }
 
         [JsonProperty("_key")]
+        [JsonPropertyName("_key")]
         public string Key { get; set; }
 
         [JsonProperty("markDefs")]
+        [JsonPropertyName("markDefs")]
         public virtual List<MarkDefModel> MarkDefs { get; set; }
 
         [JsonProperty("style")]
+        [JsonPropertyName("style")]
         public virtual string Style { get; set; }
 
         [JsonProperty("level")]
+        [JsonPropertyName("level")]
         public virtual int? Level { get; set; }
 
         [JsonProperty("listItem")]
+        [JsonPropertyName("listItem")]
         public virtual string ListItem { get; set; }
 
         [JsonProperty("children")]
+        [JsonPropertyName("children")]
         public virtual List<SpanModel> Children { get; set; }
 
         /// <summary>
