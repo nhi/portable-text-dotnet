@@ -2,13 +2,25 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Description>Library for converting HTML to PortableText</Description>
+    <Copyright>Norsk Helseinformatikk AS</Copyright>
     <PackageReleaseNotes>1.0.0: Initial Release</PackageReleaseNotes>
+    <Company>Norsk Helseinformatikk AS</Company>
+    <Authors>Kim Robert Blix</Authors>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="HtmlAgilityPack" Version="1.11.24" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
   </ItemGroup>
+
+  <ItemGroup>
+  <Content Include="../README.md">
+    <Pack>true</Pack>
+    <PackagePath>\</PackagePath>
+  </Content>
+</ItemGroup>
+
 
 </Project>
