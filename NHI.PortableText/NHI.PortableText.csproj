@@ -1,13 +1,19 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Description>Library for converting HTML to PortableText</Description>
     <Copyright>Norsk Helseinformatikk AS</Copyright>
-    <PackageReleaseNotes>1.0.0: Initial Release</PackageReleaseNotes>
+    <PackageReleaseNotes>
+      1.0.1: Added support for Core 3+ and other projects that serialize Json with System.Text.Json
+      1.0.0: Initial Release
+    </PackageReleaseNotes>
     <Company>Norsk Helseinformatikk AS</Company>
     <Authors>Kim Robert Blix</Authors>
+    <Version>1.0.1</Version>
+    <AssemblyVersion>1.0.1</AssemblyVersion>
+    <FileVersion>1.0.1</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
