@@ -10,7 +10,7 @@ function App() {
   const [portableText, setPortableText] = useState([]);
 
   useEffect(() => {
-    const body = '<p>Say hi to <a href="https://portabletext.org"><strong>Portable Text</strong></a></p>'
+    const body = '<p>Say hi to <a href="https://portabletext.org"><strong>Portable Text</strong></a> with help of</p>'
     axios.post(
       'https://localhost:5001/portabletext', 
       body,
@@ -38,6 +38,7 @@ function App() {
       <div className="App">
         <header className="App-header">
           <BlockContent blocks={portableText} />
+          <img src="https://imagevault.nhi.no/publishedmedia/2lrbbvw7ykb1h82yc92z/Logo-NHI.no.jpg" alt="NHI.no" />
         </header>
       </div>
     );
