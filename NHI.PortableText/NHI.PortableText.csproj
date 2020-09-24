@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Description>Library for converting HTML to PortableText</Description>
+    <PackageReleaseNotes>1.0.0: Initial Release</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
