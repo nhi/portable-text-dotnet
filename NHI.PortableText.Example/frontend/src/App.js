@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import './App.css';
 import BlockContent from "@sanity/block-content-to-react"
 import axios from "axios"
