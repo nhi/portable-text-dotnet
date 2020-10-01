@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import './App.css';
 import SyntaxHighlighter from 'react-syntax-highlighter'
-import nightOwl from 'react-syntax-highlighter/dist/esm/styles/hljs/night-owl'
+import nightOwl from 'react-syntax-highlighter/dist/cjs/styles/hljs/night-owl'
 
 function App() {
   const [error, setError] = useState();
