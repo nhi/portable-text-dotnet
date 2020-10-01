@@ -8,6 +8,10 @@ on:
     branches:
       - master
 
+defaults:
+  run:
+    working-directory: NHI.PortableText.Example/frontend
+
 jobs:
   build-and-deploy:
     runs-on: windows-latest
