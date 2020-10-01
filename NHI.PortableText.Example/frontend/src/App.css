@@ -1,14 +1,38 @@
-.App {
-  text-align: center;
+header {
+  display: flex;
+  align-items: center;
+  height: 64px;
+  gap: 1em;
+  padding-right: 1em;
 }
-
-.App-header {
+button {
+  padding: 1em;
+  min-width: 128px;
+}
+header img {
+  height: 64px
+}
+h1 {
+  flex: 1;
+  font-size: 1em;
+}
+body {
   background-color: #282c34;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
+}
+
+form {
+  display: flex;
+  gap: .1em
+}
+
+pre, h1, textarea {
+  margin: 0;
+  padding: 0
+}
+
+form textarea, .result {
+  flex: 1;
+  height: calc(100vh - 64px);
 }

@@ -1,83 +1,49 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import './App.css';
-import BlockContent from "@sanity/block-content-to-react"
-import axios from "axios"
-
+import SyntaxHighlighter from 'react-syntax-highlighter'
+import nightOwl from 'react-syntax-highlighter/dist/esm/styles/hljs/night-owl'
 
 function App() {
-  const [error, setError] = useState(null);
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [portableText, setPortableText] = useState([]);
-  const [convertedPortableText, setInputPortableText] = useState();
-  const [textAreaString, setTextAreaString] = useState();
+  const [error, setError] = useState();
+  const [result, setResult] = useState();
+  const [input, setInput] = useState('<p>Say hi to <a href="https://portabletext.org"><strong>Portable Text</strong></a> with help of</p>');
 
-  useEffect(() => {
-    const body = '<p>Say hi to <a href="https://portabletext.org"><strong>Portable Text</strong></a> with help of</p>'
-    axios.post(
-      process.env.REACT_APP_API_ENDPOINT, 
-      body,
-      {
-        headers: {
-          'Content-Type': 'text/plain'
-        }
+  const handleSubmit = async (e) => {
+    if (e) e.preventDefault()
+    if (!input) {
+      return
+    }
+    try {
+      const response = await fetch(process.env.REACT_APP_API_ENDPOINT, {
+        method: "post",
+        body: input,
       })
-      .then(result => {
-        setPortableText(result.data);
-        setIsLoaded(true);
-      })
-      .catch(error => {
-        setInputPortableText(undefined)
-        setIsLoaded(true);
-        setError(error);
-      })
-  }, [])
-
-  const postFunction = (e) => {
-    e.preventDefault()
-    axios.post(
-      process.env.REACT_APP_API_ENDPOINT, 
-      textAreaString,
-      {
-        headers: {
-          'Content-Type': 'text/plain'
-        }
-      })
-      .then(result => {
-        setInputPortableText(result.data);
-        setIsLoaded(true);
-      })
-      .catch(error => {
-        setIsLoaded(true);
-        setError(error);
-      })
+      const result = await response.json()
+      setResult(result)
+    } catch (error) {
+      console.log(error, "yoo");
+      setError(error)
+    }
   }
 
-  const handleChange = (event) => {
-    setTextAreaString(event.target.value)
-  }
-
-  if (error) {
-    return <div>Error: {error.message}</div>;
-  } else if (!isLoaded) {
-    return <div>Loading...</div>;
-  } else {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <BlockContent blocks={portableText} />
+  return (
+    <main>
+      <header>
+        <a href="https://github.com/nhi/NHI.PortableText.DotNet" target="_blank" rel="noreferrer noopener">
           <img src="https://imagevault.nhi.no/publishedmedia/2lrbbvw7ykb1h82yc92z/Logo-NHI.no.jpg" alt="NHI.no" />
-          <form onSubmit={postFunction}>
-            <label>
-              HTMLString:
-              <textarea value={textAreaString} onChange={handleChange} />
-            </label>
-            <input type="submit" value="Submit" />
-          </form>
-    <pre>{JSON.stringify(convertedPortableText, null, 2)}</pre>
-        </header>
-      </div>
-    );
-  }
+        </a>
+        <h1>HTML to PortableText converter (dotnet)</h1>
+        <button onClick={handleSubmit}>Convert</button>
+      </header>
+      {error ? error.message || error : null}
+      <form onSubmit={handleSubmit}>
+        <textarea value={input} onChange={(event) => setInput(event.target.value)}/>
+        <SyntaxHighlighter showLineNumbers style={nightOwl} className="result" language="json">
+          {JSON.stringify(result ?? {}, null, 2)}
+        </SyntaxHighlighter>
+      </form>
+    </main>
+  );
 }
 
 export default App;
