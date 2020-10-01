@@ -12,7 +12,7 @@ function App() {
   useEffect(() => {
     const body = '<p>Say hi to <a href="https://portabletext.org"><strong>Portable Text</strong></a> with help of</p>'
     axios.post(
-      'https://localhost:5001/portabletext', 
+      process.env.REACT_APP_API_ENDPOINT, 
       body,
       {
         headers: {
