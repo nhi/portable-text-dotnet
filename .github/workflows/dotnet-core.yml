@@ -1,10 +1,9 @@
 name: .NET Core
 
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+on: [push, pull_request]
+  branches: [ master ]
+  paths-ignore:
+  - 'NHI.PortableText.Example/**'
 
 jobs:
   build:

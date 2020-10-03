@@ -3,10 +3,10 @@
 
 name: Build and deploy ASP.Net Core app to Azure Web App - portabletext-backend-nhi
 
-on:
-  push:
-    branches:
-      - master
+on: [push, pull_request]
+  branches: [ master ]
+  paths-ignore:
+  - 'NHI.PortableText.Example/frontend/**'
 
 defaults:
   run:
