@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29920.165
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PortableText", "PortableText.csproj", "{514F2A37-F2C8-4455-A2D3-775010424879}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PortableText.Test", "..\tests\PortableText.Test.csproj", "{7C5E3AE1-EF38-486A-B42A-702C277BFF6F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PortableText.Test", "tests\PortableText.Test.csproj", "{7C5E3AE1-EF38-486A-B42A-702C277BFF6F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PortableText.Example", "..\example\backend\PortableText.Example.csproj", "{75A37C48-3431-48C4-A86E-5B496C1F1D62}"
 EndProject
