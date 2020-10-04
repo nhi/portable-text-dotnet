@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\PortableText\PortableText.csproj" />
+    <ProjectReference Include="..\PortableText.csproj" />
   </ItemGroup>
 
 </Project>
