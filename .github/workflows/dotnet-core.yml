@@ -4,7 +4,7 @@ on:
   push:
     branches: [master]
     paths-ignore:
-    - 'NHI.PortableText.Example/**'
+    - 'example/**'
   pull_request:
     branches: [master]
     paths-ignore:
@@ -23,8 +23,8 @@ jobs:
       with:
         dotnet-version: 3.1.301
     - name: Install dependencies
-      run: dotnet restore ./NHI.PortableText
+      run: dotnet restore ./src
     - name: Build
-      run: dotnet build --configuration Release --no-restore ./NHI.PortableText
+      run: dotnet build --configuration Release --no-restore ./src
     - name: Test
-      run: dotnet test --no-restore --verbosity normal ./NHI.PortableText
+      run: dotnet test --no-restore --verbosity normal ./src
