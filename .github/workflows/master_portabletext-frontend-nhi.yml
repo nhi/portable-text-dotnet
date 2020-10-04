@@ -5,8 +5,13 @@ name: Build and deploy Node.js app to Azure Web App - portabletext-frontend-nhi
 
 on:
   push:
-    branches:
-      - master
+    branches: [master]
+    paths:
+    - 'NHI.PortableText.Example/frontend/**'
+  pull_request:
+    branches: [master]
+    paths:
+    - 'NHI.PortableText.Example/frontend/**'
 
 defaults:
   run:
