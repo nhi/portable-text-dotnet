@@ -3,6 +3,6 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\src\NHI.PortableText.csproj"/>
+    <ProjectReference Include="..\..\src\NHI.PortableText\NHI.PortableText.csproj"/>
   </ItemGroup>
 </Project>
