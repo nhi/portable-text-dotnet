@@ -12,6 +12,7 @@ on:
     branches: [master]
     paths-ignore:
     - 'NHI.PortableText.Example/frontend/**'
+  workflow_dispatch:
 
 defaults:
   run:
