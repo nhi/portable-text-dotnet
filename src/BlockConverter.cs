@@ -1,13 +1,13 @@
 ﻿using HtmlAgilityPack;
 using Newtonsoft.Json;
-using PortableText.Model;
-using PortableText.Parser;
+using NHI.PortableText.Model;
+using NHI.PortableText.Parser;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace PortableText
+namespace NHI.PortableText
 {
     /// <summary>
     /// Converts Html to blockdata

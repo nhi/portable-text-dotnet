@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\PortableText.csproj" />
+    <ProjectReference Include="..\NHI.PortableText.csproj" />
   </ItemGroup>
 
 </Project>

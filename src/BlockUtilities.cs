@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web;
 
-namespace PortableText
+namespace NHI.PortableText
 {
     /// <summary>
     /// Some usefull utilities when parsing html into block models

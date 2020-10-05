@@ -1,8 +1,8 @@
 ﻿using HtmlAgilityPack;
-using PortableText.Model;
+using NHI.PortableText.Model;
 using System.Collections.Generic;
 
-namespace PortableText.Parser
+namespace NHI.PortableText.Parser
 {
     /// <summary>
     /// Default drop parser. This parser does nothing and makes sure no children are parsed.

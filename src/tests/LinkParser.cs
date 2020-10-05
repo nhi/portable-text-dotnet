@@ -1,6 +1,6 @@
 ﻿using Xunit;
 
-namespace PortableText.Test
+namespace NHI.PortableText.Test
 {
     /// <summary>
     /// Tests of link parsing

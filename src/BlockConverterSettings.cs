@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace PortableText
+namespace NHI.PortableText
 {
     /// <summary>
     /// Settings for BlockConverter

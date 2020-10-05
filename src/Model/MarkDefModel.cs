@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace PortableText.Model
+namespace NHI.PortableText.Model
 {
     /// <summary>
     /// Poco for MarkDefs set in blocks

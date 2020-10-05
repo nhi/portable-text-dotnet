@@ -1,9 +1,9 @@
 ﻿using HtmlAgilityPack;
-using PortableText.Model;
+using NHI.PortableText.Model;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace PortableText.Parser
+namespace NHI.PortableText.Parser
 {
     /// <summary>
     /// The default decorator parser. Sets the markDef for spans on the block and makes sure all

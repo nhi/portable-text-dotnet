@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
-namespace PortableText.Model
+namespace NHI.PortableText.Model
 {
     /// <summary>
     /// Poco for span models used in blocks

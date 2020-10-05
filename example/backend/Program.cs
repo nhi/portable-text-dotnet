@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace PortableText.Example
+namespace NHI.PortableText.Example
 {
     public class Program
     {

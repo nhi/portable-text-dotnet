@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
-using PortableText.Model;
+using NHI.PortableText.Model;
 
-namespace PortableText.Example.Controllers
+namespace NHI.PortableText.Example.Controllers
 {
     [Route("[controller]")]
     [ApiController]

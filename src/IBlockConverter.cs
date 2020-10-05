@@ -1,10 +1,10 @@
 ﻿using HtmlAgilityPack;
-using PortableText.Model;
-using PortableText.Parser;
+using NHI.PortableText.Model;
+using NHI.PortableText.Parser;
 using System;
 using System.Collections.Generic;
 
-namespace PortableText
+namespace NHI.PortableText
 {
     /// <summary>
     /// Interface for BlockConverter

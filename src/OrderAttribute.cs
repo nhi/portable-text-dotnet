@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PortableText
+namespace NHI.PortableText
 {
     [AttributeUsage(AttributeTargets.Class)]
     public class OrderAttribute : Attribute

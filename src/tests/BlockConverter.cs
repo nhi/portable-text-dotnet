@@ -1,7 +1,7 @@
 using System;
 using Xunit;
 
-namespace PortableText.Test
+namespace NHI.PortableText.Test
 {
     /// <summary>
     /// Tests of BlockConverter configuration and tag-recognition

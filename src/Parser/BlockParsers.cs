@@ -1,9 +1,9 @@
 ﻿using HtmlAgilityPack;
-using PortableText.Model;
+using NHI.PortableText.Model;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace PortableText.Parser
+namespace NHI.PortableText.Parser
 {
     /// <summary>
     /// The default block parser. Will parse all child nodes and attach the created blockdata to the root.

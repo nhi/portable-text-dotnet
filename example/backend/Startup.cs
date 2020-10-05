@@ -4,7 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace PortableText.Example
+namespace NHI.PortableText.Example
 {
     public class Startup
     {

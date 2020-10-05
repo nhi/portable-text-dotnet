@@ -1,8 +1,8 @@
 ﻿using HtmlAgilityPack;
-using PortableText.Model;
+using NHI.PortableText.Model;
 using System.Collections.Generic;
 
-namespace PortableText.Parser
+namespace NHI.PortableText.Parser
 {
     /// <summary>
     /// The interface which must be implemented by all parsers registered with the converter

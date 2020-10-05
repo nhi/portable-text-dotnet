@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using Xunit;
 
-namespace PortableText.Test
+namespace NHI.PortableText.Test
 {
     /// <summary>
     /// Tests of various HTML snippets

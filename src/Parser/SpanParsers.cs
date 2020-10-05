@@ -1,8 +1,8 @@
 ﻿using HtmlAgilityPack;
-using PortableText.Model;
+using NHI.PortableText.Model;
 using System.Collections.Generic;
 
-namespace PortableText.Parser
+namespace NHI.PortableText.Parser
 {
     /// <summary>
     /// The base span parser. Adds a span model to the parent block and parses children.

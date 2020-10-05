@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc.Formatters;
 using System.IO;
 using System.Threading.Tasks;
 
-namespace PortableText.Example 
+namespace NHI.PortableText.Example 
 {
     public class TextPlainInputFormatter : InputFormatter
     {
