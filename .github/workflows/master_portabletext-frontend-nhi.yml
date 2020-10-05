@@ -5,17 +5,8 @@ name: Build and deploy Node.js app to Azure Web App - portabletext-frontend-nhi
 
 on:
   push:
-    branches: [master]
-    paths:
-    - 'NHI.PortableText.Example/frontend/**'
-  pull_request:
-    branches: [master]
-    paths:
-    - 'NHI.PortableText.Example/frontend/**'
-
-defaults:
-  run:
-    working-directory: NHI.PortableText.Example/frontend
+    branches:
+      - master
 
 jobs:
   build-and-deploy:
@@ -33,11 +24,12 @@ jobs:
       run: |
         npm install
         npm run build --if-present
+        npm run test --if-present
 
     - name: 'Deploy to Azure Web App'
       uses: azure/webapps-deploy@v2
       with:
         app-name: 'portabletext-frontend-nhi'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_e880c59065c74490b3433b2eaff8c709 }}
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_d58879c3761a43a1a65551243e655c5d }}
         package: .
