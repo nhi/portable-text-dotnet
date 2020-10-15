@@ -9,6 +9,10 @@ on:
       - master
   workflow_dispatch:
 
+defaults:
+  run:
+    working-directory: example/frontend
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest

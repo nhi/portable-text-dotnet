@@ -9,7 +9,7 @@
       "type": "coreclr",
       "request": "launch",
       "preLaunchTask": "build",
-      "program": "${workspaceFolder}/bin/Debug/netcoreapp3.1/PortableText.Example.dll",
+      "program": "${workspaceFolder}/bin/Debug/netcoreapp3.1/NHI.PortableText.Example.dll",
       "args": [],
       "cwd": "${workspaceFolder}",
       "stopAtEntry": false,
