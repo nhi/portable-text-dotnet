@@ -6,7 +6,7 @@ import nightOwl from 'react-syntax-highlighter/dist/cjs/styles/hljs/night-owl'
 function App() {
   const [error, setError] = useState();
   const [result, setResult] = useState();
-  const [input, setInput] = useState('<p>Say hi to <a href="https://portabletext.org"><strong>Portable Text</strong></a> with help of</p>');
+  const [input, setInput] = useState('<p>Say hi to <a href="https://portabletext.org"><strong>Portable Text</strong></a> with help of</p> NHI.PortableText');
 
   const handleSubmit = async (e) => {
     if (e) e.preventDefault()
@@ -21,7 +21,6 @@ function App() {
       const result = await response.json()
       setResult(result)
     } catch (error) {
-      console.log(error, "yoo");
       setError(error)
     }
   }
@@ -29,7 +28,7 @@ function App() {
   return (
     <main>
       <header>
-        <a href="https://github.com/nhi/NHI.PortableText.DotNet" target="_blank" rel="noreferrer noopener">
+        <a href="https://github.com/nhi/portable-text-dotnet" target="_blank" rel="noreferrer noopener">
           <img src="https://imagevault.nhi.no/publishedmedia/2lrbbvw7ykb1h82yc92z/Logo-NHI.no.jpg" alt="NHI.no" />
         </a>
         <h1>HTML to PortableText converter (dotnet)</h1>

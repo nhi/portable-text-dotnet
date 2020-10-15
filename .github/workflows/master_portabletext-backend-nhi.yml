@@ -1,22 +1,22 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy ASP.Net Core app to Azure Web App - portabletext-backend-nhi
+name: (backend) Build and deploy example
 
 on:
   push:
     branches: [master]
     paths-ignore:
-    - 'NHI.PortableText.Example/frontend/**'
+    - 'example/frontend/**'
   pull_request:
     branches: [master]
     paths-ignore:
-    - 'NHI.PortableText.Example/frontend/**'
+    - 'example/frontend/**'
   workflow_dispatch:
 
 defaults:
   run:
-    working-directory: NHI.PortableText.Example/server
+    working-directory: example/backend
 
 jobs:
   build-and-deploy:
