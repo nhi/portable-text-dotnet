@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 
 namespace NHI.PortableText
 {
@@ -22,6 +23,11 @@ namespace NHI.PortableText
         /// How to handle incorrectly nested html
         /// </summary>
         public StraySpanBehavior StraySpanBehavior { get; set; }
+
+        /// <summary>
+        /// When this is set, it will be used to log notable events
+        /// </summary>
+        public ILogger Logger { get; set; }
 
         /// <summary>
         /// Create with the default settings
