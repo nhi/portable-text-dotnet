@@ -12,6 +12,8 @@ The `BlockConverter` can be configured with an optional `BlockConverterSettings`
 - `StraySpanBehavior`
 	- An enum which determines what to do when malformed HTML results in a span element without a parent block (IE: `<body>this is not valid markup</body>`). Default behavior is to create a block for such elements and add them to the root.
 
+- `Logger`
+	- Disabled by default. Set to an instance of `ILogger` to turn on logging by the `BlockConverter`.
 
 ## Registering as a service
 
