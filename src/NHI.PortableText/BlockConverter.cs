@@ -141,6 +141,11 @@ namespace NHI.PortableText
                         nopParser.Parse(this, root, parent, node);
                         break;
 
+                    case MissingParserBehavior.RenderWarning:
+                        _settings.Logger?.LogWarning($"No parser found for {node.XPath}, warning rendered");
+                        parent.Children.Add(new SpanModel(text: $"WARNING: No parser found for HTML node {node.XPath}"));
+                        break;
+
                     case MissingParserBehavior.Ignore:
                         _settings.Logger?.LogWarning($"No parser found for {node.XPath}, ignoring children");
                         break;

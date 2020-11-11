@@ -57,7 +57,10 @@ namespace NHI.PortableText
         HandleChildren,
 
         /// Do not parse the node and ignore all children
-        Ignore
+        Ignore,
+
+        /// Render a warning span in output (ignores children)
+        RenderWarning
     }
 
     /// <summary>
