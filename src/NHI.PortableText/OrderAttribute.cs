@@ -2,6 +2,9 @@
 
 namespace NHI.PortableText
 {
+    /// <summary>
+    /// Used to order parsers registered via discovery
+    /// </summary>
     [AttributeUsage(AttributeTargets.Class)]
     public class OrderAttribute : Attribute
     {

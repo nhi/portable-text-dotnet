@@ -1,4 +1,5 @@
 ﻿using HtmlAgilityPack;
+using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using NHI.PortableText.Model;
 using NHI.PortableText.Parser;
@@ -86,9 +87,11 @@ namespace NHI.PortableText
             if (parent.Children.Any()) switch (_settings.StraySpanBehavior)
                 {
                     case StraySpanBehavior.ThrowException:
+                        _settings.Logger?.LogError("Parsing halted due to stray span");
                         throw new Exception("Spans were created without a parent block");
 
                     case StraySpanBehavior.AddToRoot:
+                        _settings.Logger?.LogInformation($"{parent.Children.Count} stray spans added to root");
                         root.Add(parent);
                         break;
                 }
@@ -129,14 +132,22 @@ namespace NHI.PortableText
             if (!isProcessed) switch (_settings.MissingParserBehavior)
                 {
                     case MissingParserBehavior.ThrowException:
+                        _settings.Logger?.LogError("Parsing halted due to missing parser");
                         throw new Exception($"No parser found for node {node.XPath}");
 
                     case MissingParserBehavior.HandleChildren:
+                        _settings.Logger?.LogWarning($"No parser found for {node.XPath}, parsing children");
                         var nopParser = new RootNodeParser();
                         nopParser.Parse(this, root, parent, node);
                         break;
 
+                    case MissingParserBehavior.RenderWarning:
+                        _settings.Logger?.LogWarning($"No parser found for {node.XPath}, warning rendered");
+                        parent.Children.Add(new SpanModel(text: $"WARNING: No parser found for HTML node {node.XPath}"));
+                        break;
+
                     case MissingParserBehavior.Ignore:
+                        _settings.Logger?.LogWarning($"No parser found for {node.XPath}, ignoring children");
                         break;
                 }
         }

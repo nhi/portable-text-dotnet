@@ -20,7 +20,6 @@ namespace NHI.PortableText.Example
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
             services.AddCors(options =>
             {
                 options.AddPolicy(Cors,
@@ -32,8 +31,7 @@ namespace NHI.PortableText.Example
                 });
             });
 
-            services.AddMvcCore(o => o.InputFormatters.Insert(o.InputFormatters.Count, new TextPlainInputFormatter()))
-                .AddApiExplorer();
+            services.AddMvcCore();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
