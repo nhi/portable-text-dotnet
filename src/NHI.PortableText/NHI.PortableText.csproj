@@ -6,6 +6,7 @@
     <Description>Library for converting HTML to PortableText</Description>
     <Copyright>Norsk Helseinformatikk AS</Copyright>
     <PackageReleaseNotes>
+      1.0.4: Property 'href' on markDefs of type 'quote' renamed to 'cite' to reflect q-tags in HTML
       1.0.3: Added support for inline quote tags
       1.0.2: Added ILogger support and new MissingParser behavior
       1.0.1: Added support for Core 3+ and other projects that serialize Json with System.Text.Json
@@ -13,9 +14,9 @@
     </PackageReleaseNotes>
     <Company>Norsk Helseinformatikk AS</Company>
     <Authors>Kim Robert Blix</Authors>
-    <Version>1.0.3</Version>
-    <AssemblyVersion>1.0.3</AssemblyVersion>
-    <FileVersion>1.0.3</FileVersion>
+    <Version>1.0.4</Version>
+    <AssemblyVersion>1.0.4</AssemblyVersion>
+    <FileVersion>1.0.4</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
