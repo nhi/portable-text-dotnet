@@ -36,5 +36,15 @@ namespace NHI.PortableText.Test
             Assert.Contains("strong", bc[0].Children[1].Marks[1]);
             Assert.Contains("strong", bc[0].Children[2].Marks[0]);
         }
+
+        [Fact]
+        public void Should_handle_quotes()
+        {
+            var bc = _converter.ConvertHtml("<div>this is <q cite=\"url\">a quote</q>.</div>");
+            var key = bc[0].MarkDefs[0]["_key"];
+            Assert.Equal("url", bc[0].MarkDefs[0]["href"]);
+            Assert.Equal("quote", bc[0].MarkDefs[0]["_type"]);
+            Assert.Contains(key, bc[0].Children[1].Marks);
+        }
     }
 }

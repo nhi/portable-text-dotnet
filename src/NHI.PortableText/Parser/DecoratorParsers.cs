@@ -146,5 +146,30 @@ namespace NHI.PortableText.Parser
         public override bool IsParserFor(HtmlNode n) => n.Name == "code";
     }
 
+    /// <summary>
+    /// Parser for the <q></q> tag
+    /// </summary>
+    public class QuoteNodeParser : BaseDecoratorParser
+    {
+        private string _key = null;
+
+        protected override MarkDefModel CreateMarkDef(HtmlNode node) =>
+            new MarkDefModel
+            {
+                Key = GetMark(node),
+                Type = "quote",
+                ["href"] = node.GetAttributeValue<string>("cite", string.Empty)
+            };
+
+        protected override string GetMark(HtmlNode node) => _key ?? (_key = BlockUtilities.GenerateKey());
+
+        public override bool IsParserFor(HtmlNode n) => n.Name == "q";
+
+        public override void Parse(IBlockConverter builder, List<BlockModel> root, BlockModel parent, HtmlNode node)
+        {
+            base.Parse(builder, root, parent, node);
+            _key = null;
+        }
+    }
 }
 

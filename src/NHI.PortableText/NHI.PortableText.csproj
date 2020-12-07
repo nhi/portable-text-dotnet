@@ -6,15 +6,16 @@
     <Description>Library for converting HTML to PortableText</Description>
     <Copyright>Norsk Helseinformatikk AS</Copyright>
     <PackageReleaseNotes>
+      1.0.3: Added support for inline quote tags
       1.0.2: Added ILogger support and new MissingParser behavior
       1.0.1: Added support for Core 3+ and other projects that serialize Json with System.Text.Json
       1.0.0: Initial Release
     </PackageReleaseNotes>
     <Company>Norsk Helseinformatikk AS</Company>
     <Authors>Kim Robert Blix</Authors>
-    <Version>1.0.2</Version>
-    <AssemblyVersion>1.0.2</AssemblyVersion>
-    <FileVersion>1.0.2</FileVersion>
+    <Version>1.0.3</Version>
+    <AssemblyVersion>1.0.3</AssemblyVersion>
+    <FileVersion>1.0.3</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
