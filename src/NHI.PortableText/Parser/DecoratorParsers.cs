@@ -158,7 +158,7 @@ namespace NHI.PortableText.Parser
             {
                 Key = GetMark(node),
                 Type = "quote",
-                ["href"] = node.GetAttributeValue<string>("cite", string.Empty)
+                ["cite"] = node.GetAttributeValue<string>("cite", string.Empty)
             };
 
         protected override string GetMark(HtmlNode node) => _key ?? (_key = BlockUtilities.GenerateKey());
