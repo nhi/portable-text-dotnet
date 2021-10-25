@@ -67,5 +67,12 @@ namespace NHI.PortableText.Test
             Assert.Equal(bc[0].MarkDefs[0].Key, bc[0].Children[1].Marks[0]);
             Assert.Equal(bc[0].MarkDefs[1].Key, bc[0].Children[3].Marks[0]);
         }
+
+        [Fact]
+        public void Should_honor_targets()
+        {
+            var bc = _converter.SerializeHtml("<p>This is a <a href=\"http1\" target=\"_blank\">link</a>");
+            Assert.Contains("_blank", bc);
+        }
     }
 }

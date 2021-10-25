@@ -51,7 +51,8 @@ namespace NHI.PortableText.Parser
             {
                 Key = GetMark(node),
                 Type = "link",
-                ["href"] = node.GetAttributeValue<string>("href", string.Empty)
+                ["href"] = node.GetAttributeValue<string>("href", string.Empty),
+                ["target"] = node.GetAttributeValue<string>("target", string.Empty)
             };
 
         protected override string GetMark(HtmlNode node) => _key ?? (_key = BlockUtilities.GenerateKey());
