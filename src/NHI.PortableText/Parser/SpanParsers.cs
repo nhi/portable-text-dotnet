@@ -31,7 +31,7 @@ namespace NHI.PortableText.Parser
     {
         protected override SpanModel CreateSpan(HtmlNode node)
         {
-            if (string.IsNullOrWhiteSpace(node.InnerText)) return null;
+            if (node.InnerText == null || (string.IsNullOrWhiteSpace(node.InnerText) && node.InnerText != " ")) return null;
             return new SpanModel(text: BlockUtilities.HtmlDecode(node.InnerText));
         }
 

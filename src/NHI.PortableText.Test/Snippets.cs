@@ -105,7 +105,14 @@ namespace NHI.PortableText.Test
                 @"<div><html>1<body>2<pre>3<table>4<tbody>5<tr>6<td>7<ul>8<ol>9<dl>A<span>B<label>C<blockquote>D<div>E<p>F<li>G<dt>H<dd>I</dd></dt></li></p></div></blockquote></label></span></dl></ol></ul></td></tr></tbody></table></pre></body></html></div>");
             var nums = bc.SelectMany(p => p.Children.Select(p => p.Text));
 
-            Assert.Equal("123456789ABCDEFGHI", string.Join("",nums));
+            Assert.Equal("123456789ABCDEFGHI", string.Join("", nums));
+        }
+
+        [Fact]
+        public void Should_handle_snippet_4()
+        {
+            var bc = _converter.ConvertHtml(@"<em>space</em> <strong>between</strong> two decorator elements");
+            Assert.Equal(" ", bc[0].Children[1].Text);
         }
 
     }
