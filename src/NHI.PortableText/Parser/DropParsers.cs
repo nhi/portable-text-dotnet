@@ -22,6 +22,10 @@ namespace NHI.PortableText.Parser
     /// </summary>
     public class HeadNodeParser : BaseDropParser
     {
+        public HeadNodeParser(object _ = null)
+        {
+        }
+
         public override bool IsParserFor(HtmlNode n) => n.Name == "head";
     }
 
@@ -30,6 +34,10 @@ namespace NHI.PortableText.Parser
     /// </summary>
     public class CommentNodeParser : BaseDropParser
     {
+        public CommentNodeParser(object _ = null)
+        {
+        }
+
         public override bool IsParserFor(HtmlNode n) => n.Name == "#comment";
     }
 
@@ -38,6 +46,10 @@ namespace NHI.PortableText.Parser
     /// </summary>
     public class HrNodeParser : BaseDropParser
     {
+        public HrNodeParser(object _ = null)
+        {
+        }
+
         public override bool IsParserFor(HtmlNode n) => n.Name == "hr";
     }
 
@@ -46,6 +58,10 @@ namespace NHI.PortableText.Parser
     /// </summary>
     public class SvgNodeParser : BaseDropParser
     {
+        public SvgNodeParser(object _ = null)
+        {
+        }
+
         public override bool IsParserFor(HtmlNode n) => n.Name == "svg";
     }
 
@@ -54,6 +70,10 @@ namespace NHI.PortableText.Parser
     /// </summary>
     public class ImgNodeParser : BaseDropParser
     {
+        public ImgNodeParser(object _ = null)
+        {
+        }
+
         public override bool IsParserFor(HtmlNode n) => n.Name == "img";
     }
 
@@ -62,6 +82,10 @@ namespace NHI.PortableText.Parser
     /// </summary>
     public class InputNodeParser : BaseDropParser
     {
+        public InputNodeParser(object _ = null)
+        {
+        }
+
         public override bool IsParserFor(HtmlNode n) => n.Name == "input";
     }
 }

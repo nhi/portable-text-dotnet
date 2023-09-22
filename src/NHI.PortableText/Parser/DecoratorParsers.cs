@@ -44,6 +44,10 @@ namespace NHI.PortableText.Parser
     /// </summary>
     public class AnchorNodeParser : BaseDecoratorParser
     {
+        public AnchorNodeParser(object _ = null)
+        {
+        }
+
         private string _key = null;
 
         protected override MarkDefModel CreateMarkDef(HtmlNode node) =>
@@ -71,6 +75,10 @@ namespace NHI.PortableText.Parser
     /// </summary>
     public class SupNodeParser : BaseDecoratorParser
     {
+        public SupNodeParser(object _ = null)
+        {
+        }
+
         public override bool IsParserFor(HtmlNode n) => n.Name == "sup";
         protected override string GetMark(HtmlNode n) => "superscript";
     }
@@ -80,6 +88,10 @@ namespace NHI.PortableText.Parser
     /// </summary>
     public class SubNodeParser : BaseDecoratorParser
     {
+        public SubNodeParser(object _ = null)
+        {
+        }
+
         protected override string GetMark(HtmlNode n) => "subscript";
         public override bool IsParserFor(HtmlNode n) => n.Name == "sub";
     }
@@ -89,6 +101,10 @@ namespace NHI.PortableText.Parser
     /// </summary>
     public class StrongNodeParser : BaseDecoratorParser
     {
+        public StrongNodeParser(object _ = null)
+        {
+        }
+
         protected override string GetMark(HtmlNode n) => "strong";
         public override bool IsParserFor(HtmlNode n) => new[] { "b", "strong" }.Contains(n.Name);
     }
@@ -98,6 +114,10 @@ namespace NHI.PortableText.Parser
     /// </summary>
     public class EmNodeParser : BaseDecoratorParser
     {
+        public EmNodeParser(object _ = null)
+        {
+        }
+
         protected override string GetMark(HtmlNode n) => "em";
         public override bool IsParserFor(HtmlNode n) => n.Name == "em";
     }
@@ -107,6 +127,10 @@ namespace NHI.PortableText.Parser
     /// </summary>
     public class ItalicNodeParser : BaseDecoratorParser
     {
+        public ItalicNodeParser(object _ = null)
+        {
+        }
+
         protected override string GetMark(HtmlNode n) => "em";
         public override bool IsParserFor(HtmlNode n) => n.Name == "i";
     }
@@ -116,6 +140,10 @@ namespace NHI.PortableText.Parser
     /// </summary>
     public class UNodeParser : BaseDecoratorParser
     {
+        public UNodeParser(object _ = null)
+        {
+        }
+
         protected override string GetMark(HtmlNode n) => "underline";
         public override bool IsParserFor(HtmlNode n) => n.Name == "u";
     }
@@ -125,6 +153,10 @@ namespace NHI.PortableText.Parser
     /// </summary>
     public class StrikeNodeParser : BaseDecoratorParser
     {
+        public StrikeNodeParser(object _ = null)
+        {
+        }
+
         protected override string GetMark(HtmlNode n) => "strike-through";
         public override bool IsParserFor(HtmlNode n) => new[] { "s", "strike" }.Contains(n.Name);
     }
@@ -134,6 +166,10 @@ namespace NHI.PortableText.Parser
     /// </summary>
     public class DelNodeParser : BaseDecoratorParser
     {
+        public DelNodeParser(object _ = null)
+        {
+        }
+
         protected override string GetMark(HtmlNode n) => "strike-through";
         public override bool IsParserFor(HtmlNode n) => n.Name == "del";
     }
@@ -143,6 +179,10 @@ namespace NHI.PortableText.Parser
     /// </summary>
     public class CodeNodeParser : BaseDecoratorParser
     {
+        public CodeNodeParser(object _ = null)
+        {
+        }
+
         protected override string GetMark(HtmlNode n) => "code";
         public override bool IsParserFor(HtmlNode n) => n.Name == "code";
     }
@@ -152,6 +192,10 @@ namespace NHI.PortableText.Parser
     /// </summary>
     public class QuoteNodeParser : BaseDecoratorParser
     {
+        public QuoteNodeParser(object _ = null)
+        {
+        }
+
         private string _key = null;
 
         protected override MarkDefModel CreateMarkDef(HtmlNode node) =>

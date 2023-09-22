@@ -1,24 +1,25 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFrameworks>netstandard2.0;netstandard2.1;net6.0;net7.0</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Description>Library for converting HTML to PortableText</Description>
     <Copyright>Norsk Helseinformatikk AS</Copyright>
     <PackageReleaseNotes>
-      1.0.6: Update the handling of whitespace between HTML-tags
-      1.0.5: Parsing of anchor tags now include the 'target' attribute
-      1.0.4: Property 'href' on markDefs of type 'quote' renamed to 'cite' to reflect q-tags in HTML
-      1.0.3: Added support for inline quote tags
-      1.0.2: Added ILogger support and new MissingParser behavior
-      1.0.1: Added support for Core 3+ and other projects that serialize Json with System.Text.Json
-      1.0.0: Initial Release
+		1.1.0: Target framework bump, and support for parametered constructors through Activator.CreateInstance
+        1.0.6: Update the handling of whitespace between HTML-tags
+        1.0.5: Parsing of anchor tags now include the 'target' attribute
+        1.0.4: Property 'href' on markDefs of type 'quote' renamed to 'cite' to reflect q-tags in HTML
+        1.0.3: Added support for inline quote tags
+        1.0.2: Added ILogger support and new MissingParser behavior
+        1.0.1: Added support for Core 3+ and other projects that serialize Json with System.Text.Json
+        1.0.0: Initial Release
 </PackageReleaseNotes>
     <Company>Norsk Helseinformatikk AS</Company>
-    <Authors>Kim Robert Blix</Authors>
-    <Version>1.0.6</Version>
-    <AssemblyVersion>1.0.6</AssemblyVersion>
-    <FileVersion>1.0.6</FileVersion>
+    <Authors>Kim Robert Blix, Owen Andrew Jørgensen</Authors>
+    <Version>1.1.0</Version>
+    <AssemblyVersion>1.1.0</AssemblyVersion>
+    <FileVersion>1.1.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>

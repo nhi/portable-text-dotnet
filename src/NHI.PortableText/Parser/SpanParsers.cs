@@ -29,6 +29,10 @@ namespace NHI.PortableText.Parser
     /// </summary>
     public class TextNodeParser : BaseSpanParser
     {
+        public TextNodeParser(object _ = null)
+        {
+        }
+
         protected override SpanModel CreateSpan(HtmlNode node)
         {
             if (node.InnerText == null || (string.IsNullOrWhiteSpace(node.InnerText) && node.InnerText != " ")) return null;
@@ -43,6 +47,10 @@ namespace NHI.PortableText.Parser
     /// </summary>
     public class BrNodeParser : BaseSpanParser
     {
+        public BrNodeParser(object _ = null)
+        {
+        }
+
         protected override SpanModel CreateSpan(HtmlNode node) => new SpanModel(text: "\n");
 
         public override bool IsParserFor(HtmlNode n) => n.Name == "br";

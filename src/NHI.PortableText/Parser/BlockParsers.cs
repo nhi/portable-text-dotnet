@@ -55,6 +55,10 @@ namespace NHI.PortableText.Parser
     /// </summary>
     public class BlockQuoteParser : BaseBlockParser
     {
+        public BlockQuoteParser(object _ = null)
+        {
+        }
+
         public override bool IsParserFor(HtmlNode n) => n.Name == "blockquote";
         protected override BlockModel CreateBlock(HtmlNode node) => new BlockModel(style: "blockquote");
     }
@@ -64,6 +68,10 @@ namespace NHI.PortableText.Parser
     /// </summary>
     public class DivNodeParser : BaseBlockParser
     {
+        public DivNodeParser(object _ = null)
+        {
+        }
+
         public override bool IsParserFor(HtmlNode n) => n.Name == "div";
     }
 
@@ -72,6 +80,10 @@ namespace NHI.PortableText.Parser
     /// </summary>
     public class TdNodeParser : BaseBlockParser
     {
+        public TdNodeParser(object _ = null)
+        {
+        }
+
         public override bool IsParserFor(HtmlNode n) => n.Name == "td";
     }
 
@@ -80,6 +92,10 @@ namespace NHI.PortableText.Parser
     /// </summary>
     public class ParagraphNodeParser : BaseBlockParser
     {
+        public ParagraphNodeParser(object _ = null)
+        {
+        }
+
         public override bool IsParserFor(HtmlNode n) => n.Name == "p";
     }
 
@@ -88,6 +104,10 @@ namespace NHI.PortableText.Parser
     /// </summary>
     public class LiNodeParser : BaseBlockParser
     {
+        public LiNodeParser(object _ = null)
+        {
+        }
+
         protected override BlockModel CreateBlock(HtmlNode node) =>
             new BlockModel(listItem: BlockUtilities.GetListStyle(node), level: BlockUtilities.GetListLevel(node));
 
@@ -99,6 +119,10 @@ namespace NHI.PortableText.Parser
     /// </summary>
     public class DtNodeParser : BaseBlockParser
     {
+        public DtNodeParser(object _ = null)
+        {
+        }
+
         protected override BlockModel CreateBlock(HtmlNode node) =>
             new BlockModel(listItem: BlockUtilities.GetListStyle(node), level: BlockUtilities.GetListLevel(node));
 
@@ -110,6 +134,10 @@ namespace NHI.PortableText.Parser
     /// </summary>
     public class DdNodeParser : BaseBlockParser
     {
+        public DdNodeParser(object _ = null)
+        {
+        }
+
         protected override BlockModel CreateBlock(HtmlNode node) =>
             new BlockModel(listItem: BlockUtilities.GetListStyle(node), level: BlockUtilities.GetListLevel(node));
 
@@ -121,6 +149,10 @@ namespace NHI.PortableText.Parser
     /// </summary>
     public class HeadingNodeParser : BaseBlockParser
     {
+        public HeadingNodeParser(object _ = null)
+        {
+        }
+
         protected override BlockModel CreateBlock(HtmlNode node) => new BlockModel(style: node.Name);
 
         public override bool IsParserFor(HtmlNode n) => new[] { "h1", "h2", "h3", "h4", "h5", "h6" }.Contains(n.Name);

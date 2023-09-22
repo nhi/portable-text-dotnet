@@ -25,6 +25,10 @@ namespace NHI.PortableText.Parser
     /// </summary>
     public class RootNodeParser : BaseParser
     {
+        public RootNodeParser(object _ = null)
+        {
+        }
+
         public override bool IsParserFor(HtmlNode n) => n.Name == "#document";
     }
 
@@ -33,6 +37,10 @@ namespace NHI.PortableText.Parser
     /// </summary>
     public class HtmlNodeParser : BaseParser
     {
+        public HtmlNodeParser(object _ = null)
+        {
+        }
+
         public override bool IsParserFor(HtmlNode n) => n.Name == "html";
     }
 
@@ -41,6 +49,10 @@ namespace NHI.PortableText.Parser
     /// </summary>
     public class BodyNodeParser : BaseParser
     {
+        public BodyNodeParser(object _ = null)
+        {
+        }
+
         public override bool IsParserFor(HtmlNode n) => n.Name == "body";
     }
 
@@ -49,6 +61,10 @@ namespace NHI.PortableText.Parser
     /// </summary>
     public class PreNodeParser : BaseParser
     {
+        public PreNodeParser(object _ = null)
+        {
+        }
+
         public override bool IsParserFor(HtmlNode node) => node.Name == "pre";
     }
 
@@ -57,6 +73,10 @@ namespace NHI.PortableText.Parser
     /// </summary>
     public class TableNodeParser : BaseParser
     {
+        public TableNodeParser(object _ = null)
+        {
+        }
+
         public override bool IsParserFor(HtmlNode node) => node.Name == "table";
     }
 
@@ -65,6 +85,10 @@ namespace NHI.PortableText.Parser
     /// </summary>
     public class TBodyNodeParser : BaseParser
     {
+        public TBodyNodeParser(object _ = null)
+        {
+        }
+
         public override bool IsParserFor(HtmlNode n) => n.Name == "tbody";
     }
 
@@ -73,6 +97,10 @@ namespace NHI.PortableText.Parser
     /// </summary>
     public class TrNodeParser : BaseParser
     {
+        public TrNodeParser(object _ = null)
+        {
+        }
+
         public override bool IsParserFor(HtmlNode n) => n.Name == "tr";
     }
 
@@ -81,6 +109,10 @@ namespace NHI.PortableText.Parser
     /// </summary>
     public class UlNodeParser : BaseParser
     {
+        public UlNodeParser(object _ = null)
+        {
+        }
+
         public override bool IsParserFor(HtmlNode n) => n.Name == "ul";
     }
 
@@ -89,6 +121,10 @@ namespace NHI.PortableText.Parser
     /// </summary>
     public class OlNodeParser : BaseParser
     {
+        public OlNodeParser(object _ = null)
+        {
+        }
+
         public override bool IsParserFor(HtmlNode n) => n.Name == "ol";
     }
 
@@ -97,6 +133,10 @@ namespace NHI.PortableText.Parser
     /// </summary>
     public class DlNodeParser : BaseParser
     {
+        public DlNodeParser(object _ = null)
+        {
+        }
+
         public override bool IsParserFor(HtmlNode n) => n.Name == "dl";
     }
 
@@ -105,6 +145,10 @@ namespace NHI.PortableText.Parser
     /// </summary>
     public class SpanNodeParser : BaseParser
     {
+        public SpanNodeParser(object _ = null)
+        {
+        }
+
         public override bool IsParserFor(HtmlNode n) => n.Name == "span";
     }
 
@@ -113,6 +157,10 @@ namespace NHI.PortableText.Parser
     /// </summary>
     public class LabelNodeParser : BaseParser
     {
+        public LabelNodeParser(object _ = null)
+        {
+        }
+
         public override bool IsParserFor(HtmlNode n) => n.Name == "label";
     }
 }
