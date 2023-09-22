@@ -22,6 +22,11 @@ namespace NHI.PortableText
         void AddParser(IHtmlNodeParser instance);
 
         /// <summary>
+        /// Add a parser to the converter
+        /// </summary>
+        void AddParser<T>(T contentSettings, IHtmlNodeParser instance);
+
+        /// <summary>
         /// Remove a parser from the converter
         /// </summary>
         void RemoveParser(Type type);

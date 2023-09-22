@@ -62,10 +62,34 @@ namespace NHI.PortableText
                 .Where(p => typeof(IHtmlNodeParser).IsAssignableFrom(p) && !p.IsAbstract).ToList();
 
             var ordered = new List<Tuple<int, Type>>();
-            types.ForEach(p => ordered.Add(new Tuple<int,Type>(p.GetCustomAttribute<OrderAttribute>()?.Order ?? 0, p)));
+            types.ForEach(p => ordered.Add(new Tuple<int, Type>(p.GetCustomAttribute<OrderAttribute>()?.Order ?? 0, p)));
 
             ordered.OrderBy(p => p.Item1).ToList()
                 .ForEach(p => Parsers.Insert(0, (IHtmlNodeParser)Activator.CreateInstance(p.Item2)));
+        }
+
+        /// <summary>
+        /// Add all new parsers found to the converter
+        /// </summary>
+        /// <param name="assembly">Optional parameter to restrict the search for parsers to a specific assembly</param>
+        public void AddParsers<T>(T contentSettings, Assembly assembly = null)
+            where T : class, new()
+        {
+            if (typeof(T).Name != "ContentSettings")
+                throw new ArgumentException("Type parameter is unsupported.");
+            var sources = AppDomain.CurrentDomain
+                .GetAssemblies().Where(p => p != GetType().Assembly).ToList();
+
+            if (assembly != null) sources = sources.Where(p => p == assembly).ToList();
+
+            var types = sources.SelectMany(p => p.GetTypes())
+                .Where(p => typeof(IHtmlNodeParser).IsAssignableFrom(p) && !p.IsAbstract).ToList();
+
+            var ordered = new List<Tuple<int, Type>>();
+            types.ForEach(p => ordered.Add(new Tuple<int, Type>(p.GetCustomAttribute<OrderAttribute>()?.Order ?? 0, p)));
+
+            ordered.OrderBy(p => p.Item1).ToList()
+                .ForEach(p => Parsers.Insert(0, (IHtmlNodeParser)Activator.CreateInstance(p.Item2, contentSettings)));
         }
 
         /// <summary>
