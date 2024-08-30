@@ -6,6 +6,7 @@
     <Description>Library for converting HTML to PortableText</Description>
     <Copyright>Norsk Helseinformatikk AS</Copyright>
     <PackageReleaseNotes>
+      1.0.7: Ignore unicode nbsp when sanitizing html whitespace
       1.0.6: Update the handling of whitespace between HTML-tags
       1.0.5: Parsing of anchor tags now include the 'target' attribute
       1.0.4: Property 'href' on markDefs of type 'quote' renamed to 'cite' to reflect q-tags in HTML
