@@ -41,7 +41,7 @@ namespace NHI.PortableText
         /// </summary>
         public static string HtmlDecode(string html)
         {
-            return HttpUtility.HtmlDecode(Regex.Replace(html, @"\s+", " "));
+            return HttpUtility.HtmlDecode(Regex.Replace(html, @"[^\S\xa0]+", " ")); //Changed to not touch non-breaking spaces
         }
 
         /// <summary>
